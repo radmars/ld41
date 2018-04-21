@@ -21,7 +21,6 @@ public class Flipper : MonoBehaviour {
 		key = left ? "Left" : "Right";
 		body = GetComponent<Rigidbody2D>();
 		hinge = GetComponent<HingeJoint2D>();
-		Debug.Log(body);
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Walls"), LayerMask.NameToLayer("Flippers"), true);
 		hinge.useMotor = true;
 	}
@@ -31,7 +30,6 @@ public class Flipper : MonoBehaviour {
 		if(Input.GetAxis(key) > 0) {
 			hinge.useMotor = false;
 			body.AddTorque((left ? 1 : -1) * flippiness, ForceMode2D.Impulse);
-			Debug.Log("Adding some troque");
 		}
 		else {
 			hinge.useMotor = true;
