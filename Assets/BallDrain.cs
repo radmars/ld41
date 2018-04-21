@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BallTrap : MonoBehaviour {
+public class BallDrain : MonoBehaviour {
 
 	public GameObject spawner;
 
