@@ -1118,11 +1118,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114666852344507428, guid: 5688eb29c03b04c97b5565d93ca41b14,
-        type: 2}
-      propertyPath: shootCooldownMax
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5688eb29c03b04c97b5565d93ca41b14, type: 2}
   m_IsPrefabParent: 0
@@ -1220,7 +1215,7 @@ Prefab:
     - target: {fileID: 114833134908556080, guid: cf0dc434f58ce4bf5aeb0ac0cc6f86c6,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf0dc434f58ce4bf5aeb0ac0cc6f86c6, type: 2}
