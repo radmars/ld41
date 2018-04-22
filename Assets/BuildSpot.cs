@@ -4,16 +4,17 @@ public class BuildSpot : MonoBehaviour {
 
 	Color mouseOverColor = Color.red;
 	Color originalColor;
-	new MeshRenderer renderer;
+	new SpriteRenderer renderer;
 
 	private BuildOption[] options;
 	private bool over;
 
 	void Start()
 	{
-		renderer = GetComponent<MeshRenderer>();
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Balls"), LayerMask.NameToLayer("BuildSpots"));
+		renderer = GetComponent<SpriteRenderer>();
 		originalColor = renderer.material.color;
-		options = GetComponentsInChildren<BuildOption>();
+		options = GetComponentsInChildren<BuildOption>(true);
 		foreach(var o in options) {
 			o.gameObject.SetActive(false);
 			o.SetBuildSpot(this);
