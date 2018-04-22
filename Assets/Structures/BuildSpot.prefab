@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212549259810861520}
   - component: {fileID: 61439487453448686}
   - component: {fileID: 114819548241980078}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spike Build Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114857830961629546}
   - component: {fileID: 212245151673190864}
   - component: {fileID: 58952760037103136}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BuildSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 212629533586654616}
   - component: {fileID: 61890459323336190}
   - component: {fileID: 114456400622318292}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tower Build Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 212326517534117528}
   - component: {fileID: 61702889373344714}
   - component: {fileID: 114916897967110444}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bumper Build Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}

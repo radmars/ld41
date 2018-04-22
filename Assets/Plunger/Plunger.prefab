@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61505366556616186}
   - component: {fileID: 249081149548615070}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Accelerator 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 61343195471569432}
   - component: {fileID: 249874344781427054}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Accelerator 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
