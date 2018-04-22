@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Tower : MonoBehaviour {
 
@@ -12,9 +10,11 @@ public class Tower : MonoBehaviour {
 	public float shotForceMult = 100.0f;
 
 	public float leadsTargetAmount = 0.3f;
+	private float towerRadius;
 
 	void Start() {
 		shootCooldown = shootCooldownMax;
+		towerRadius = GetComponent<CircleCollider2D>().radius;
 	}
 	
 	// Update is called once per frame
@@ -27,17 +27,16 @@ public class Tower : MonoBehaviour {
 	}
 
 	private void findTargetAndShoot() {
-		GameObject[] balls;
-		balls = GameObject.FindGameObjectsWithTag("ball");
+		GameObject[] balls = GameObject.FindGameObjectsWithTag("ball");
 		if (balls.Length == 0) {
 			return;
 		}
 
 		GameObject target = null;
 		float distance = Mathf.Infinity;
-		Vector3 position = transform.position;
-		Vector3 diff = new Vector3();
-		foreach (GameObject ball in balls) {
+		var position = transform.position;
+		var diff = new Vector3();
+		foreach (var ball in balls) {
 			diff = ball.transform.position - position;
 			float curDistance = diff.sqrMagnitude;
 			if (curDistance < distance && curDistance < maxTargetingDistance) {
@@ -49,15 +48,17 @@ public class Tower : MonoBehaviour {
 		if (target == null) {
 			return;
 		}
-			
-		Vector2 toTarget = new Vector2(diff.x, diff.y);
+
+		var toTarget = new Vector2(diff.x, diff.y);
 		toTarget += target.GetComponent<Rigidbody2D>().velocity * leadsTargetAmount;
 
 		toTarget.Normalize();
 		diff.Normalize();
-		float radius = GetComponent<CircleCollider2D>().radius;
-		Vector3 shotPos = transform.position + (diff * (radius + 0.2f));
+		Vector3 shotPos = transform.position + (diff * (towerRadius + 0.2f));
+
 		Shot shot = Instantiate(shotPrefab, shotPos, transform.rotation);
+		shot.damage = 1;
+
 		Vector2 shotForce = toTarget * shotForceMult;
 		shot.GetComponent<Rigidbody2D>().AddForce(shotForce);
 	}
