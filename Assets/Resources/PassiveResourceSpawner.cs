@@ -5,7 +5,7 @@ using UnityEngine;
 public class PassiveResourceSpawner : MonoBehaviour {
 
 	public Resource resourceToSpawn;
-	public int spawnCooldownMax = 400;
+	public int spawnCooldownMax = 500;
 	private int spawnCooldown;
 
 	public float spawnRadius = 0.2f;
