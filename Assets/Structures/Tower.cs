@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Tower : MonoBehaviour {
 
@@ -8,6 +10,7 @@ public class Tower : MonoBehaviour {
 	private int shootCooldown;
 	public float maxTargetingDistance = 50.0f;
 	public float shotForceMult = 100.0f;
+	public int damage = 1;
 
 	public float leadsTargetAmount = 0.3f;
 	private float towerRadius;
@@ -27,7 +30,10 @@ public class Tower : MonoBehaviour {
 	}
 
 	private void findTargetAndShoot() {
-		GameObject[] balls = GameObject.FindGameObjectsWithTag("ball");
+		GameObject[] balls = GameObject.FindGameObjectsWithTag("ball")
+			.Where(o => o.activeInHierarchy)
+			.ToArray();
+
 		if (balls.Length == 0) {
 			return;
 		}
@@ -57,7 +63,7 @@ public class Tower : MonoBehaviour {
 		Vector3 shotPos = transform.position + (diff * (towerRadius + 0.2f));
 
 		Shot shot = Instantiate(shotPrefab, shotPos, transform.rotation);
-		shot.damage = 1;
+		shot.damage = damage;
 
 		Vector2 shotForce = toTarget * shotForceMult;
 		shot.GetComponent<Rigidbody2D>().AddForce(shotForce);

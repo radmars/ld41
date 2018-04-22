@@ -115,4 +115,5 @@ MonoBehaviour:
   shootCooldownMax: 100
   maxTargetingDistance: 5000
   shotForceMult: 100
+  damage: 5
   leadsTargetAmount: 0.4

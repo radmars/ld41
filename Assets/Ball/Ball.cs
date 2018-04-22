@@ -7,30 +7,25 @@ public class Ball : MonoBehaviour {
 	public GameObject hpBar;
 	private Vector3 hpBarOffset;
 
-	public void Start() {
+	public void Awake() {
 		hp = startingHP;
 		hpBarOffset = transform.position - hpBar.transform.position;
 	}
 
 	public void TakeDamage(int damage) {
 		hp -= damage;
-
-		Debug.Log(damage);
-		Debug.Log((float)hp / (float)startingHP);
-
 		hpBar.transform.localScale = new Vector3(
 			(float)hp / startingHP,
 			hpBar.transform.localScale.y,
 			hpBar.transform.localScale.z
 		);
-		Debug.Log(hpBar.transform.localScale);
 		if(hp <= 0) {
 			Die();
 		}
 	}
 
 	public void Die() {
-		Destroy(transform.parent);
+		Destroy(transform.parent.gameObject);
 	}
 
 	public void Update() {
