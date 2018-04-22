@@ -1,13 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceController : MonoBehaviour {
 
 	public static ResourceController instance;
+	public Text resourceDisplay;
+
+	private string formatString = "WAVE     => {0}\nGAS      => {1}\nMINERALS => {0}\n";
 
 	void Start() {
 		instance = this;
+		UpdateText();
+	}
+
+	private void UpdateText() {
+		resourceDisplay.text = string.Format(formatString, 1, Gas, Minerals);
 	}
 
 	private int minerals;
@@ -17,6 +24,7 @@ public class ResourceController : MonoBehaviour {
 		}
 		set {
 			minerals = value;
+			UpdateText();
 		}
 	}
 
@@ -27,6 +35,7 @@ public class ResourceController : MonoBehaviour {
 		}
 		set {
 			gas = value;
+			UpdateText();
 		}
 	}
 

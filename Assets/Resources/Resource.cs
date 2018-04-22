@@ -1,18 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Resource : MonoBehaviour {
 
-	public string type;
+	public enum ResourceType {
+		Gas,
+		Minerals,
+	}
+	public ResourceType type;
 
 	public void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "ball") {
 			Destroy(gameObject);
 
-			if (type == "minerals") {
+			if (type == ResourceType.Minerals) {
 				ResourceController.instance.Minerals++;
-			} else if (type == "gas") {
+			} else if (type == ResourceType.Gas) {
 				ResourceController.instance.Gas++;
 			}
 		}
