@@ -23,7 +23,7 @@ public class BuildSpot : MonoBehaviour {
 	public void OnMouseEnter() {
 		over = true;
 		renderer.material.color = mouseOverColor;
-			}
+	}
 
 	public void OnMouseDown() {
 		if(over) {
