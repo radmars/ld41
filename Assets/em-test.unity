@@ -1039,22 +1039,6 @@ Prefab:
       propertyPath: m_Name
       value: Floor Build Spot (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1626898494109912, guid: a2db91e55831c4ed2ab9260d36b87d94, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1659650859534698, guid: a2db91e55831c4ed2ab9260d36b87d94, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116169387719984, guid: a2db91e55831c4ed2ab9260d36b87d94, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958784171557710, guid: a2db91e55831c4ed2ab9260d36b87d94, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2db91e55831c4ed2ab9260d36b87d94, type: 2}
   m_IsPrefabParent: 0

@@ -295,7 +295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600213113397432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -8.41, z: 0}
+  m_LocalPosition: {x: 0.12, y: -4.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4709740453505566}
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPrefab: {fileID: 1095205640390526, guid: aa3270786364b49cc89470a443f1301b,
     type: 2}
-  mineralCost: 20
+  mineralCost: 5
   gasCost: 0
 --- !u!114 &114491426659714732
 MonoBehaviour:
@@ -785,8 +785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPrefab: {fileID: 1459036212103104, guid: 8a5630e797c604f0da6295c56d76e5d7,
     type: 2}
-  mineralCost: 80
-  gasCost: 90
+  mineralCost: 5
+  gasCost: 5
 --- !u!114 &114799216266581394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPrefab: {fileID: 1018150588777672, guid: 313545a9f4970416b9c77061732aaeb3,
     type: 2}
-  mineralCost: 10
+  mineralCost: 0
   gasCost: 20
 --- !u!114 &114805096647270116
 MonoBehaviour:
@@ -815,8 +815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPrefab: {fileID: 1210258980861544, guid: 7f926f89583e648c7afad3ab7d4274f0,
     type: 2}
-  mineralCost: 0
-  gasCost: 20
+  mineralCost: 10
+  gasCost: 0
 --- !u!114 &114853883628155076
 MonoBehaviour:
   m_ObjectHideFlags: 1
