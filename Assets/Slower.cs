@@ -2,8 +2,8 @@
 using System.Linq;
 using UnityEngine;
 
-public class DamagePulse : PassiveBase {
-	public int damage = 15;
+public class Slower : PassiveBase {
+	public float slowFactor = .25f;
 
 	protected override IEnumerator ApplyPassive() {
 		yield return new WaitUntil( () => {
@@ -13,7 +13,7 @@ public class DamagePulse : PassiveBase {
 				.ToArray();
 
 			foreach(var h in hits) {
-				h.GetComponent<Ball>().TakeDamage(damage);
+				h.GetComponent<Rigidbody2D>().velocity *= slowFactor;
 			}
 
 			return hits.Length > 0;

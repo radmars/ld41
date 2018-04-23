@@ -14,7 +14,9 @@ public class ResourceController : MonoBehaviour {
 	}
 
 	private void UpdateText() {
-		resourceDisplay.text = string.Format(formatString, 1, Gas, Minerals);
+		if(resourceDisplay) {
+			resourceDisplay.text = string.Format(formatString, 1, Gas, Minerals);
+		}
 	}
 
 	private int minerals;
