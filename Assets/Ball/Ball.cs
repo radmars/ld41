@@ -31,7 +31,7 @@ public class Ball : MonoBehaviour {
 	}
 
 	public void Die() {
-		PlayfieldController.instance.deathSound.Play();
+		ResourceController.instance.BallDied();
 		Destroy(transform.parent.gameObject);
 	}
 

@@ -6,6 +6,7 @@ public class BallDrain: MonoBehaviour {
 
 	public void OnCollisionEnter2D(Collision2D collision) {
 		if(collision.gameObject.tag == "ball") {
+			ResourceController.instance.BallDrained();
 			spawner.Launch(collision.gameObject);
 		}
 	}

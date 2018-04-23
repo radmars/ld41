@@ -25,6 +25,7 @@ public class Bumper : MonoBehaviour {
 
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(forceVector);
 			bumpSound.Play();
+			ResourceController.instance.Score += 10;
 		}
 	}
 }
