@@ -15,6 +15,8 @@ public class Tower : MonoBehaviour {
 	public float leadsTargetAmount = 0.3f;
 	private float towerRadius;
 
+	public AudioSource shootSound;
+
 	void Start() {
 		shootCooldown = shootCooldownMax;
 		towerRadius = GetComponent<CircleCollider2D>().radius;
@@ -67,5 +69,7 @@ public class Tower : MonoBehaviour {
 
 		Vector2 shotForce = toTarget * shotForceMult;
 		shot.GetComponent<Rigidbody2D>().AddForce(shotForce);
+
+		shootSound.Play();
 	}
 }

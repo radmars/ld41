@@ -6,6 +6,9 @@ public class ResourceController : MonoBehaviour {
 	public static ResourceController instance;
 	public Text resourceDisplay;
 
+	public AudioSource mineralPickup;
+	public AudioSource gasPickup;
+
 	private string formatString = "WAVE     => {0}\nGAS      => {1}\nMINERALS => {2}\n";
 
 	void Start() {
@@ -25,6 +28,7 @@ public class ResourceController : MonoBehaviour {
 			return minerals;
 		}
 		set {
+			mineralPickup.Play();
 			minerals = value;
 			UpdateText();
 		}
@@ -36,6 +40,7 @@ public class ResourceController : MonoBehaviour {
 			return gas;
 		}
 		set {
+			gasPickup.Play();
 			gas = value;
 			UpdateText();
 		}

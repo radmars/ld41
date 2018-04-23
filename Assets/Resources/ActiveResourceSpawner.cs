@@ -8,9 +8,11 @@ public class ActiveResourceSpawner : MonoBehaviour {
 	public int numResourcesToSpawn = 5;
 	public float spawnRadius = 0.5f;
 	public float pushForce = 50.0f;
+	public AudioSource hitSound;
 
 	public void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ball") {
+			hitSound.Play();
 			for (int i = 0; i < numResourcesToSpawn; i++) {
 				Vector3 push = new Vector3(Random.Range(-spawnRadius, spawnRadius),
 					Random.Range(-spawnRadius, spawnRadius), transform.position.z);

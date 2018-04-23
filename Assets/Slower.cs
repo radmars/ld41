@@ -5,6 +5,8 @@ using UnityEngine;
 public class Slower : PassiveBase {
 	public float slowFactor = .25f;
 
+	public AudioSource slowSound;
+
 	protected override IEnumerator ApplyPassive() {
 		yield return new WaitUntil( () => {
 			var hits = Physics2D.OverlapCircleAll(transform.position, radius)
@@ -14,6 +16,10 @@ public class Slower : PassiveBase {
 
 			foreach(var h in hits) {
 				h.GetComponent<Rigidbody2D>().velocity *= slowFactor;
+			}
+
+			if (hits.Length > 0) {
+				slowSound.Play();
 			}
 
 			return hits.Length > 0;

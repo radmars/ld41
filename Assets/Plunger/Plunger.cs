@@ -6,6 +6,8 @@ public class Plunger : MonoBehaviour {
 	public GameObject ballPrefab;
 	public float spawnRatePerSecond = 1;
 
+	public AudioSource plungeSound;
+
 	public void Start() {
 		ballPrefab.SetActive(false);
 		StartCoroutine(SpawnBalls());
@@ -31,5 +33,7 @@ public class Plunger : MonoBehaviour {
 		body.angularVelocity = 0;
 		body.rotation = 0;
 		body.velocity = Vector2.up * 20;
+
+		plungeSound.Play();
 	}
 }

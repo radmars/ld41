@@ -14,6 +14,8 @@ public class Flipper : MonoBehaviour {
 	private Rigidbody2D body;
 	private HingeJoint2D hinge;
 
+	public AudioSource flipSound;
+	bool lastInput = false;
 
 	// Use this for initialization
 	void Start () {
@@ -27,12 +29,20 @@ public class Flipper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetAxis(key) > 0) {
+		bool input = Input.GetAxis(key) > 0;
+
+		if (input && !lastInput) {
+			flipSound.Play();
+		}
+
+		if (input) {
 			hinge.useMotor = false;
 			body.AddTorque((left ? 1 : -1) * flippiness, ForceMode2D.Impulse);
 		}
 		else {
 			hinge.useMotor = true;
 		}
+
+		lastInput = input;
 	}
 }

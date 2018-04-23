@@ -8,6 +8,8 @@ public class Bumper : MonoBehaviour {
 	public bool useOverrideVector = false;
 	public Vector2 overrideVector;
 
+	public AudioSource bumpSound;
+
 	public void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ball") {
 			Vector2 forceVector;
@@ -22,6 +24,7 @@ public class Bumper : MonoBehaviour {
 			}
 
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(forceVector);
+			bumpSound.Play();
 		}
 	}
 }
