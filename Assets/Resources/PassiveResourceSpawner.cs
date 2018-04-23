@@ -1,27 +1,25 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PassiveResourceSpawner : MonoBehaviour {
 
 	public Resource resourceToSpawn;
-	public int spawnCooldownMax = 500;
-	private int spawnCooldown;
-
+	public float spawnSeconds = 2.5f;
 	public float spawnRadius = 0.2f;
 
 	void Start() {
-		spawnCooldown = spawnCooldownMax;
+		StartCoroutine(SpawnStuff());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		spawnCooldown--;
-		if (spawnCooldown <= 0) {
-			Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(-spawnRadius, spawnRadius),
-				transform.position.y + Random.Range(-spawnRadius, spawnRadius), transform.position.z);
+
+	IEnumerator SpawnStuff() {
+		while(true) {
+			yield return new WaitForSeconds(spawnSeconds);
+			var spawnPos = new Vector3(
+				transform.position.x + Random.Range(-spawnRadius, spawnRadius),
+				transform.position.y + Random.Range(-spawnRadius, spawnRadius),
+				transform.position.z
+			);
 			Instantiate(resourceToSpawn, spawnPos, transform.rotation);
-			spawnCooldown = spawnCooldownMax;
 		}
 	}
 }
