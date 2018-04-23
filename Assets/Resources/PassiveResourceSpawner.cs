@@ -7,7 +7,7 @@ public class PassiveResourceSpawner : MonoBehaviour {
 	public float spawnSeconds = 2.5f;
 	public float spawnRadius = 0.2f;
 
-	void Start() {
+	void Awake() {
 		StartCoroutine(SpawnStuff());
 	}
 
