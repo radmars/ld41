@@ -10,6 +10,8 @@ public class Bumper : MonoBehaviour {
 
 	public AudioSource bumpSound;
 
+	public int damage = 1;
+
 	public void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ball") {
 			Vector2 forceVector;
@@ -26,6 +28,9 @@ public class Bumper : MonoBehaviour {
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(forceVector);
 			bumpSound.Play();
 			ResourceController.instance.Score += 10;
+
+			var ball = collision.gameObject.GetComponent<Ball>();
+			ball.TakeDamage(damage);
 		}
 	}
 }

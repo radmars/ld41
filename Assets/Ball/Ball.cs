@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour {
 	}
 
 	public void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.relativeVelocity.magnitude > soundScalar) {
+		if (collisionSound != null && collision.relativeVelocity.magnitude > soundScalar) {
 			collisionSound.volume = collision.relativeVelocity.magnitude / (soundScalar * 25.0f);
 			collisionSound.Play();
 		}

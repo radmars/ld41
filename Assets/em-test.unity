@@ -2776,6 +2776,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceDisplay: {fileID: 0}
+  mineralPickup: {fileID: 0}
+  gasPickup: {fileID: 0}
+  deathSound: {fileID: 0}
+  plunger: {fileID: 1567216023}
 --- !u!4 &1933185203
 Transform:
   m_ObjectHideFlags: 0

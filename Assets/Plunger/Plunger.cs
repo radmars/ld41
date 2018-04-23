@@ -5,17 +5,22 @@ public class Plunger : MonoBehaviour {
 
 	public GameObject ballPrefab;
 	public float spawnRatePerSecond = 1;
+	private int ballsToSpawn = 1;
 
 	public AudioSource plungeSound;
 
 	public void Start() {
 		ballPrefab.SetActive(false);
+	}
+
+	public void SpawnThisManyBalls(int balls) {
+		ballsToSpawn = balls;
 		StartCoroutine(SpawnBalls());
 	}
 
 	private IEnumerator SpawnBalls() {
 		float perSecond = 1f/spawnRatePerSecond;
-		while(true) {
+		for (int i = 0; i < ballsToSpawn; i++) {
 			yield return new WaitForSeconds(perSecond);
 			if(ballPrefab != null) {
 				var container = Instantiate(ballPrefab);

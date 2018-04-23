@@ -11,7 +11,10 @@ public class ResourceController : MonoBehaviour {
 
 	public AudioSource deathSound;
 
-	private int wave = 1;
+	public Plunger plunger;
+
+	private int wave = 0;
+	private int ballsLeftToKillThisWave = 0;
 
 	private string formatString =
 		"BASE HP  => {0}\n" +
@@ -20,9 +23,16 @@ public class ResourceController : MonoBehaviour {
 		"MINERALS => {3}\n" +
 		"SCORE    => {4}\n";
 
+	private string debugFormat = "base {0} wave {1} gas {2} minerals {3} score {4}";
+
 	void Start() {
 		instance = this;
+		nextWave();
 		UpdateText();
+	}
+
+	private int getNumBallsForWave() {
+		return wave / 3 + 1;
 	}
 
 	private void UpdateText() {
@@ -30,17 +40,30 @@ public class ResourceController : MonoBehaviour {
 		if(resourceDisplay) {
 			resourceDisplay.text = text;
 		}
-		Debug.Log(text);
+		Debug.Log(string.Format(debugFormat, BaseHP, wave, Gas, Minerals, Score));
+	}
+
+	private void nextWave() {
+		wave++;
+		ballsLeftToKillThisWave = getNumBallsForWave();
+		plunger.SpawnThisManyBalls(ballsLeftToKillThisWave);
+		UpdateText();
 	}
 
 	public void BallDied() {
 		deathSound.Play();
 		score += 1000;
 		UpdateText();
+
+		ballsLeftToKillThisWave--;
+		if (ballsLeftToKillThisWave == 0) {
+			nextWave();
+		}
 	}
 
 	public void BallDrained() {
 		BaseHP--;
+		// Note that BallDrain currently relaunches the same ball
 		UpdateText();
 	}
 
