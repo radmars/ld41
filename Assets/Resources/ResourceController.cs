@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ResourceController : MonoBehaviour {
 
 	public static ResourceController instance;
 	public Text resourceDisplay;
+	public Text gameOverText;
 
 	public AudioSource mineralPickup;
 	public AudioSource gasPickup;
@@ -13,20 +15,19 @@ public class ResourceController : MonoBehaviour {
 
 	public Plunger plunger;
 
-	private int wave = 0;
-	private int ballsLeftToKillThisWave = 0;
+	private int wave;
+	private int ballsLeftToKillThisWave;
 
-	private string formatString =
+	private const string formatString =
 		"BASE HP  => {0}\n" +
 		"WAVE     => {1}\n" +
 		"GAS      => {2}\n" +
 		"MINERALS => {3}\n" +
 		"SCORE    => {4}\n";
 
-	private string debugFormat = "base {0} wave {1} gas {2} minerals {3} score {4}";
-
 	void Start() {
 		instance = this;
+		gameOverText.gameObject.SetActive(false);
 		nextWave();
 		UpdateText();
 	}
@@ -40,7 +41,6 @@ public class ResourceController : MonoBehaviour {
 		if(resourceDisplay) {
 			resourceDisplay.text = text;
 		}
-		Debug.Log(string.Format(debugFormat, BaseHP, wave, Gas, Minerals, Score));
 	}
 
 	private void nextWave() {
@@ -109,9 +109,24 @@ public class ResourceController : MonoBehaviour {
 		set {
 			baseHP = value;
 			if (baseHP <= 0) {
-				// GAME OVER???
+				ShowGameOver();
 			}
 		}
+	}
+
+	private void ShowGameOver() {
+		gameOverText.gameObject.SetActive(true);
+		StartCoroutine(WaitForClick());
+	}
+
+	public IEnumerator WaitForClick() {
+		yield return new WaitUntil( () => {
+			if(Input.GetMouseButton(0)) {
+				Application.LoadLevel(Application.loadedLevel);
+				return true;
+			}
+			return false;
+		});
 	}
 
 }

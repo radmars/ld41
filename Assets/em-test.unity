@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 41695507}
   - component: {fileID: 41695506}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Resource Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1443,6 +1443,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 41695505}
+  - {fileID: 1999472325}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2906,14 +2907,14 @@ PolygonCollider2D:
       - {x: 0, y: 24.525581}
       - {x: 0.032476425, y: 3.3395252}
       - {x: -1.1274843, y: 3.7756498}
-      - {x: -1.0693007, y: 22.618244}
+      - {x: -0.9841213, y: 22.618244}
       - {x: -1.403801, y: 24.843872}
       - {x: -2.444388, y: 27.128702}
       - {x: -3.9958482, y: 29.072369}
       - {x: -3.9330444, y: 28.512705}
       - {x: -2.1342192, y: 25.452793}
-      - {x: -1.5185127, y: 22.470898}
-      - {x: -1.7533784, y: 3.7809262}
+      - {x: -1.4333329, y: 22.442505}
+      - {x: -1.5490713, y: 3.7809262}
       - {x: -4.743348, y: 2.0865576}
       - {x: -4.7550807, y: -0.18202591}
       - {x: 0.6902838, y: -0.100002766}
@@ -3144,6 +3145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceDisplay: {fileID: 41695506}
+  gameOverText: {fileID: 1999472326}
   mineralPickup: {fileID: 1933185206}
   gasPickup: {fileID: 1933185205}
   deathSound: {fileID: 1933185204}
@@ -3503,6 +3505,83 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94236aaadc31f471cb993ae4bedc0f15, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1999472324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1999472325}
+  - component: {fileID: 1999472327}
+  - component: {fileID: 1999472326}
+  m_Layer: 5
+  m_Name: Game Over Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1999472325
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999472324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 980073398}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1999472326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999472324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 98acd4f6d09bd724dbe3eaa1e0db0c02, type: 2}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 54
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'GAME OVER
+
+
+    CLICK TO RESTART'
+--- !u!222 &1999472327
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999472324}
 --- !u!4 &2023820563 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4302978466230362, guid: a557c293724b0480ebaf2eeec2871a7b,
