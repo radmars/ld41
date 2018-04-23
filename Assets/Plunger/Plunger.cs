@@ -37,7 +37,7 @@ public class Plunger : MonoBehaviour {
 		body.velocity = Vector2.zero;
 		body.angularVelocity = 0;
 		body.rotation = 0;
-		body.velocity = Vector2.up * 20;
+		body.velocity = Vector2.up * 40;
 
 		plungeSound.Play();
 	}

@@ -5,6 +5,6 @@ PhysicsMaterial2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ballmaterial
+  m_Name: flipper material
   friction: 0.4
-  bounciness: 0.6
+  bounciness: 2

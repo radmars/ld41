@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bumper : MonoBehaviour {
-	public float force = 500.0f;
+	public float force = 3000.0f;
 
 	public bool useOverrideVector = false;
 	public Vector2 overrideVector;
@@ -29,8 +29,10 @@ public class Bumper : MonoBehaviour {
 			bumpSound.Play();
 			ResourceController.instance.Score += 10;
 
-			var ball = collision.gameObject.GetComponent<Ball>();
-			ball.TakeDamage(damage);
+			if (damage > 0) {
+				var ball = collision.gameObject.GetComponent<Ball>();
+				ball.TakeDamage(damage);
+			}
 		}
 	}
 }
