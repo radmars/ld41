@@ -6,7 +6,7 @@ public class ResourceController : MonoBehaviour {
 	public static ResourceController instance;
 	public Text resourceDisplay;
 
-	private string formatString = "WAVE     => {0}\nGAS      => {1}\nMINERALS => {0}\n";
+	private string formatString = "WAVE     => {0}\nGAS      => {1}\nMINERALS => {2}\n";
 
 	void Start() {
 		instance = this;

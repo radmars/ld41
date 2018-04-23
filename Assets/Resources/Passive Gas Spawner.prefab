@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a0b422a383444a9b55fbe443cd59c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceToSpawn: {fileID: 114565523284515436, guid: 86714772a1dd74edca468c0dbfe07c75,
+  resourceToSpawn: {fileID: 114040287544687146, guid: 681ac2b83ef874a76a25f7a777df3ce6,
     type: 2}
   spawnSeconds: 2.5
   spawnRadius: 2
