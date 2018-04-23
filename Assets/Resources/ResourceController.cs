@@ -67,7 +67,7 @@ public class ResourceController : MonoBehaviour {
 		UpdateText();
 	}
 
-	private int minerals;
+	private int minerals = 30;
 	public int Minerals {
 		get {
 			return minerals;
@@ -79,7 +79,7 @@ public class ResourceController : MonoBehaviour {
 		}
 	}
 
-	private int gas;
+	private int gas = 30;
 	public int Gas {
 		get {
 			return gas;
