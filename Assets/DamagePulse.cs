@@ -4,26 +4,40 @@ using UnityEngine;
 
 public class DamagePulse : MonoBehaviour {
 	public float damageEverySeconds;
-	public new CircleCollider2D collider;
 	public int damage = 15;
+	private Sprite original;
+	public Sprite readySprite;
+	public float radius = 2.5f;
+	private new SpriteRenderer renderer;
 
-	void Awake() {
-		collider = GetComponent<CircleCollider2D>();
+	private void Awake() {
 		StartCoroutine(DoDamage());
+		renderer = GetComponent<SpriteRenderer>();
+		original = renderer.sprite;
 	}
 
-	IEnumerator DoDamage() {
+	private IEnumerator DoDamage() {
 		while(true) {
 			yield return new WaitForSeconds(damageEverySeconds);
+			renderer.sprite = readySprite;
+			yield return new WaitForSeconds(0.1f);
 
-			var hits = Physics2D.OverlapCircleAll(transform.position, collider.radius)
-				.Where(h => h.gameObject.tag == "ball")
-				.Select(h => h.gameObject)
-				.ToArray();
+			yield return new WaitUntil( () => {
+				var hits = Physics2D.OverlapCircleAll(transform.position, radius)
+					.Where(h => h.gameObject.tag == "ball")
+					.Select(h => h.gameObject)
+					.ToArray();
 
-			foreach(var h in hits) {
-				h.GetComponent<Ball>().TakeDamage(damage);
-			}
+				foreach(var h in hits) {
+					h.GetComponent<Ball>().TakeDamage(damage);
+				}
+
+				if(hits.Length > 0) {
+					renderer.sprite = original;
+					return true;
+				}
+				return false;
+			});
 		}
 	}
 }
