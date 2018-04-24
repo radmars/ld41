@@ -101,7 +101,7 @@ public class ResourceController : MonoBehaviour {
 		}
 	}
 
-	private int baseHP = 5;
+	private int baseHP = 10;
 	public int BaseHP {
 		get {
 			return baseHP;
