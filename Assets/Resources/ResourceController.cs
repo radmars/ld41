@@ -18,6 +18,8 @@ public class ResourceController : MonoBehaviour {
 	private int wave;
 	private int ballsLeftToKillThisWave;
 
+    private float origTimeScale;
+
 	private const string formatString =
 		"BASE HP  => {0}\n" +
 		"WAVE     => {1}\n" +
@@ -30,6 +32,7 @@ public class ResourceController : MonoBehaviour {
 		gameOverText.gameObject.SetActive(false);
 		nextWave();
 		UpdateText();
+        origTimeScale = Time.timeScale;
 	}
 
 	private int getNumBallsForWave() {
@@ -116,12 +119,14 @@ public class ResourceController : MonoBehaviour {
 
 	private void ShowGameOver() {
 		gameOverText.gameObject.SetActive(true);
+        Time.timeScale = 0.0f;
 		StartCoroutine(WaitForClick());
 	}
 
 	public IEnumerator WaitForClick() {
 		yield return new WaitUntil( () => {
 			if(Input.GetMouseButton(0)) {
+                Time.timeScale = origTimeScale;
 				Application.LoadLevel(Application.loadedLevel);
 				return true;
 			}
