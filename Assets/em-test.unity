@@ -3027,6 +3027,10 @@ Prefab:
       propertyPath: m_Name
       value: Tower Build Spot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1715384977985414, guid: a557c293724b0480ebaf2eeec2871a7b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a557c293724b0480ebaf2eeec2871a7b, type: 2}
   m_IsPrefabParent: 0
@@ -3078,7 +3082,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933185201}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1.97, y: -1.74, z: -0.037655808}
+  m_LocalPosition: {x: -0.4, y: -4.06, z: -0.037655808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
