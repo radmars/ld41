@@ -18,10 +18,11 @@ public class Tower : MonoBehaviour {
 	public AudioSource shootSound;
 
 	void Start() {
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Shots"), 0);
 		shootCooldown = shootCooldownMax;
 		towerRadius = GetComponent<CircleCollider2D>().radius;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		shootCooldown--;
