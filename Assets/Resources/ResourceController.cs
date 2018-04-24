@@ -46,7 +46,7 @@ public class ResourceController : MonoBehaviour {
 	private void nextWave() {
 		wave++;
 		ballsLeftToKillThisWave = getNumBallsForWave();
-		plunger.SpawnThisManyBalls(ballsLeftToKillThisWave);
+		plunger.SpawnThisManyBalls(ballsLeftToKillThisWave, wave);
 		UpdateText();
 	}
 

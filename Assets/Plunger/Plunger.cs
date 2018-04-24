@@ -13,8 +13,9 @@ public class Plunger : MonoBehaviour {
 		ballPrefab.SetActive(false);
 	}
 
-	public void SpawnThisManyBalls(int balls) {
+	public void SpawnThisManyBalls(int balls, int wave) {
 		ballsToSpawn = balls;
+		spawnRatePerSecond = wave / 4 + 1;
 		StartCoroutine(SpawnBalls());
 	}
 
