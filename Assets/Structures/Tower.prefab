@@ -151,10 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 114418518526295536, guid: 8cd63fd941eed4f7fb195c4f649a0011,
     type: 2}
-  shootCooldownMax: 50
-  maxTargetingDistance: 5000
+  shootCooldownMax: 25
+  maxTargetingDistance: 100
   shotForceMult: 100
-  damage: 5
+  damage: 3
   leadsTargetAmount: 0.4
   shootSound: {fileID: 82782941385422480}
 --- !u!212 &212033204767210816

@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downtimeSeconds: 2
   readySprite: {fileID: 21300000, guid: 72dc1946f5dc0455fb6b71ff8a2f74c4, type: 3}
-  radius: 2.5
+  radius: 1
   slowFactor: 0.25
   slowSound: {fileID: 82355756091636532}
 --- !u!212 &212679272758347994
