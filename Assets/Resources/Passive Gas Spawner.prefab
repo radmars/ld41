@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 1210258980861544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.7, y: 2.78, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,8 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceToSpawn: {fileID: 114040287544687146, guid: 681ac2b83ef874a76a25f7a777df3ce6,
     type: 2}
-  spawnSeconds: 2.5
-  spawnRadius: 2
+  spawnSeconds: 5
+  spawnRadius: 0.5
 --- !u!212 &212597940855227922
 SpriteRenderer:
   m_ObjectHideFlags: 1

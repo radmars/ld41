@@ -4,8 +4,8 @@ using UnityEngine;
 public class PassiveResourceSpawner : MonoBehaviour {
 
 	public Resource resourceToSpawn;
-	public float spawnSeconds = 2.5f;
-	public float spawnRadius = 0.2f;
+	public float spawnSeconds = .05f;
+	public float spawnRadius = 0.05f;
 
 	void Awake() {
 		StartCoroutine(SpawnStuff());
